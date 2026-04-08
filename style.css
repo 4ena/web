@@ -10,52 +10,52 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero {
+.page-wrap {
   width: min(1200px, 92%);
   margin: 0 auto;
-  padding: 5rem 0 3rem;
+  padding: 3.5rem 0 3rem;
 }
 
-.hero-text {
-  max-width: 850px;
-  text-align: left;
+.hero {
+  margin-bottom: 2.5rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  font-size: clamp(3rem, 7vw, 5.4rem);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.85rem;
+  line-height: 0.95;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #b8b8b8;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+  color: #c2c2c2;
+  line-height: 1.5;
+  margin-bottom: 0.45rem;
 }
 
 .school {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #8f8f8f;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .email-link {
   display: inline-block;
-  color: #f5f5f5;
+  color: #d9d9d9;
   text-decoration: none;
-  font-size: 1.3rem;
-  transition: opacity 0.25s ease;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.1rem;
+  transition: opacity 0.25s ease, border-color 0.25s ease;
 }
 
 .email-link:hover {
-  opacity: 0.65;
+  opacity: 0.7;
+  border-color: #888;
 }
 
 .grid {
-  width: min(1200px, 92%);
-  margin: 0 auto 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
@@ -63,45 +63,69 @@ body {
 
 .panel {
   position: relative;
-  min-height: 420px;
-  text-decoration: none;
-  color: white;
-  border-radius: 2px;
+  display: block;
+  min-height: 440px;
   overflow: hidden;
-  background: linear-gradient(135deg, #171717, #2a2a2a);
+  text-decoration: none;
+  background: #181818;
 }
 
-.panel::after {
-  content: "";
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.panel-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
-}
-
-.panel:hover::after {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.18);
+  transition: background 0.35s ease;
 }
 
 .panel-label {
   position: absolute;
-  left: 1.5rem;
-  bottom: 1.5rem;
-  z-index: 1;
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
+  left: 1.3rem;
+  bottom: 1.2rem;
+  color: #ffffff;
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+}
+
+.panel:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.6);
+}
+
+.panel:hover .panel-overlay {
+  background: rgba(0, 0, 0, 0.34);
 }
 
 @media (max-width: 900px) {
+  .page-wrap {
+    width: min(94%, 1200px);
+    padding-top: 2.5rem;
+  }
+
+  .hero {
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 10vw, 4.4rem);
+  }
+
+  .subtitle {
+    font-size: 0.98rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
 
   .panel {
     min-height: 260px;
-  }
-
-  .hero {
-    padding-top: 4rem;
   }
 }
