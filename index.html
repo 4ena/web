@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +9,7 @@
 <body>
   <header>
     <div class="bar">
-      <a class="brand" href="#home">Nick Foran</a>
+      <a class="brand" href="#home">Your Name</a>
       <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
         <div class="dropdown" id="drop">
@@ -22,6 +22,7 @@
           </div>
         </div>
         <a href="#contact">Contact</a>
+        <button class="themebtn" type="button" onclick="toggleTheme()">Light/Dark</button>
       </nav>
     </div>
   </header>
@@ -38,20 +39,22 @@
         </div>
       </div>
       <div class="museum" aria-label="Featured work preview">
-        <div class="gallery">
-          <div class="panel"></div>
-          <div class="panel"></div>
-          <div class="panel"></div>
-          <div class="panel"></div>
-        </div>
-        <div class="caption"><span>Featured portfolio view</span><span>Art / Research / Projects / Photography</span></div>
+        <a class="hero-link" href="#art">
+          <div class="gallery">
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+          </div>
+        </a>
+        <div class="caption"><span>Featured portfolio view</span><span>Click the image to enter the portfolio</span></div>
       </div>
     </section>
 
     <section id="about" class="grid">
       <article class="card wide">
         <h2>About</h2>
-        <p>Name. School. Major. Hobbies can live here as a small, polished note rather than a full biography.</p>
+        <p>Nick Foran. University of Cincinnati. Electrcial Engineering. Hobbies can live here as a small, polished note rather than a full biography.</p>
       </article>
       <article class="card">
         <h3>Focus</h3>
@@ -65,17 +68,17 @@
 
     <section id="art">
       <div class="folio">
-        <article class="work"><div class="img"></div><div class="txt"><h3>Art</h3><p>Short caption for an artwork or series.</p></div></article>
-        <article class="work"><div class="img"></div><div class="txt"><h3>Research</h3><p>Short caption for research work or visual notes.</p></div></article>
-        <article class="work"><div class="img"></div><div class="txt"><h3>Projects</h3><p>Short caption for a design or academic project.</p></div></article>
-        <article class="work"><div class="img"></div><div class="txt"><h3>Photography</h3><p>Short caption for a photograph or series.</p></div></article>
+        <a class="work" href="#art"><div class="img"></div><div class="txt"><h3>Art</h3><p>Short caption for an artwork or series.</p></div></a>
+        <a class="work" href="#research"><div class="img"></div><div class="txt"><h3>Research</h3><p>Short caption for research work or visual notes.</p></div></a>
+        <a class="work" href="#projects"><div class="img"></div><div class="txt"><h3>Projects</h3><p>Short caption for a design or academic project.</p></div></a>
+        <a class="work" href="#photography"><div class="img"></div><div class="txt"><h3>Photography</h3><p>Short caption for a photograph or series.</p></div></a>
       </div>
     </section>
 
     <section id="contact" class="grid">
       <article class="card full">
         <h2>Contact</h2>
-        <p class="email">foranns@mail.uc.edu</p>
+        <p class="email">foranns[at]mail[dot]uc[dot]edu</p>
       </article>
     </section>
   </main>
@@ -94,6 +97,10 @@
         drop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
       }
     });
+    function toggleTheme(){
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
   </script>
 </body>
 </html>
