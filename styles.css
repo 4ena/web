@@ -27,35 +27,23 @@ button{
 }
 
 .topbar{
-  position:relative;
-  background:rgba(0,0,0,.92);
+  background:rgba(0,0,0,.88);
   border-bottom:1px solid rgba(43,39,36,.95);
-  backdrop-filter:blur(12px);
-}
-
-.bar{
-  max-width:980px;
-  margin:0 auto;
-  padding:10px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.brand{
-  font-size:.95rem;
-  letter-spacing:.06em;
-  text-transform:uppercase;
 }
 
 .nav{
   display:flex;
   align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  max-width:980px;
+  margin:0 auto;
 }
 
 .dropdown{
   position:relative;
+  display:flex;
+  justify-content:center;
 }
 
 .dropbtn{
@@ -68,15 +56,15 @@ button{
   letter-spacing:.08em;
   text-transform:uppercase;
   box-shadow:none;
+  outline:none;
 }
 
 .dropbtn:hover,
-.dropbtn:focus,
-.dropbtn:active{
+.dropbtn:focus{
   outline:none;
-  opacity:.8;
-  background:transparent;
   box-shadow:none;
+  background:transparent;
+  opacity:.8;
 }
 
 .dropbtn::-moz-focus-inner{
@@ -87,7 +75,7 @@ button{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  top:calc(100% + 10px);
+  top:calc(100% + 8px);
   min-width:200px;
   background:var(--card);
   border:1px solid var(--line);
@@ -100,6 +88,7 @@ button{
 .menu a{
   display:block;
   padding:10px 12px;
+  border-radius:0;
   color:var(--text);
 }
 
@@ -109,8 +98,8 @@ button{
   outline:none;
 }
 
-.dropdown.open .menu,
-.dropdown:focus-within .menu{
+.dropdown:focus-within .menu,
+.dropdown.open .menu{
   display:block;
 }
 
@@ -291,7 +280,7 @@ section{
 }
 
 @media (max-width:640px){
-  .bar{
+  .nav{
     padding:10px 12px;
   }
   .shell{
