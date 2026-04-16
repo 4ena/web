@@ -1,46 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nicholas Foran</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nick Foran</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="hero">
-      <h1>Nicholas Foran</h1>
-      <p class="subtitle">Electrical Engineering &amp; Computer Science • Mathematics • Design</p>
-      <p class="school">University of Cincinnati</p>
-      <p class="e-mail">foranns [at] uc [dot] edu
-
-      <a class="email-link" href="mailto:foranns@mail.uc.edu" aria-label="Email Nicholas Foran">
-        Email
-      </a>
-    </header>
-
-    <main class="grid">
-      <a href="projects.html" class="panel">
-        <img src="images/prj.jpg" alt="Projects preview" />
-        <div class="panel-overlay">
-          <div class="panel-label">Projects</div>
+  <header>
+    <div class="bar">
+      <a class="brand" href="#home">Nick Foran</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <div class="dropdown" id="drop">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu()">Portfolio ▾</button>
+          <div class="menu" role="menu" aria-label="Portfolio sections">
+            <a role="menuitem" href="#art">Art</a>
+            <a role="menuitem" href="#research">Research</a>
+            <a role="menuitem" href="#projects">Projects</a>
+            <a role="menuitem" href="#photography">Photography</a>
+          </div>
         </div>
-      </a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-      <a href="art.html" class="panel">
-        <img src="images/art.jpg" alt="Art preview" />
-        <div class="panel-overlay">
-          <div class="panel-label">Art</div>
+  <main id="home" class="shell">
+    <section class="hero">
+      <div>
+        <h1>Nick Foran</h1>
+        <p class="lede">University of Cincinnati · Electrical Engineering. A quiet portfolio shaped like a small museum: minimal text, curated work, and a professional feel.</p>
+        <div class="meta">
+          <span class="chip">University of Cincinnati</span>
+          <span class="chip">Electrical Engineering</span>
+          <span class="chip">Selected Works</span>
         </div>
-      </a>
+      </div>
+      <div class="museum" aria-label="Featured work preview">
+        <div class="gallery">
+          <div class="panel"></div>
+          <div class="panel"></div>
+          <div class="panel"></div>
+          <div class="panel"></div>
+        </div>
+        <div class="caption"><span>Featured portfolio view</span><span>Art / Research / Projects / Photography</span></div>
+      </div>
+    </section>
 
-      <a href="photography.html" class="panel">
-        <img src="images/ph.jpg" alt="Photography preview" />
-        <div class="panel-overlay">
-          <div class="panel-label">Photography</div>
-        </div>
-      </a>
-    </main>
-  </div>
+    <section id="about" class="grid">
+      <article class="card wide">
+        <h2>About</h2>
+        <p>Name. School. Major. Hobbies can live here as a small, polished note rather than a full biography.</p>
+      </article>
+      <article class="card">
+        <h3>Focus</h3>
+        <p>Clean, museum-like presentation with strong typography and generous spacing.</p>
+      </article>
+      <article class="card">
+        <h3>Style</h3>
+        <p>Minimal, editorial, and professional.</p>
+      </article>
+    </section>
+
+    <section id="art">
+      <div class="folio">
+        <article class="work"><div class="img"></div><div class="txt"><h3>Art</h3><p>Short caption for an artwork or series.</p></div></article>
+        <article class="work"><div class="img"></div><div class="txt"><h3>Research</h3><p>Short caption for research work or visual notes.</p></div></article>
+        <article class="work"><div class="img"></div><div class="txt"><h3>Projects</h3><p>Short caption for a design or academic project.</p></div></article>
+        <article class="work"><div class="img"></div><div class="txt"><h3>Photography</h3><p>Short caption for a photograph or series.</p></div></article>
+      </div>
+    </section>
+
+    <section id="contact" class="grid">
+      <article class="card full">
+        <h2>Contact</h2>
+        <p class="email">foranns@mail.uc.edu</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell">© 2026 Nick Foran</footer>
+
+  <script>
+    const drop = document.getElementById('drop');
+    function toggleMenu() {
+      const open = drop.classList.toggle('open');
+      drop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
+    }
+    document.addEventListener('click', e => {
+      if (!drop.contains(e.target)) {
+        drop.classList.remove('open');
+        drop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 </body>
 </html>
