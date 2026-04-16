@@ -5,6 +5,17 @@
   --line:#d8d1c6;
   --card:#fffaf2;
   --shadow:0 18px 50px rgba(0,0,0,.08);
+  --spot:rgba(255,255,255,.45);
+}
+
+html[data-theme="dark"]{
+  --bg:#111013;
+  --text:#f4efe8;
+  --muted:#b4aba1;
+  --line:#3a3530;
+  --card:#1a181b;
+  --shadow:0 18px 50px rgba(0,0,0,.35);
+  --spot:rgba(255,255,255,.12);
 }
 
 *{box-sizing:border-box}
@@ -34,6 +45,11 @@ header{
   border-bottom:1px solid rgba(216,209,198,.7);
 }
 
+html[data-theme="dark"] header{
+  background:rgba(17,16,19,.86);
+  border-bottom:1px solid rgba(58,53,48,.9);
+}
+
 .bar{
   display:flex;
   align-items:center;
@@ -55,10 +71,12 @@ header{
   align-items:center;
   gap:14px;
   position:relative;
+  flex-wrap:wrap;
 }
 
 .nav > a,
-.dropbtn{
+.dropbtn,
+.themebtn{
   padding:10px 12px;
   border-radius:999px;
   border:1px solid transparent;
@@ -68,11 +86,13 @@ header{
 
 .nav > a:hover,
 .dropbtn:hover,
+.themebtn:hover,
 .nav > a:focus,
-.dropbtn:focus{
+.dropbtn:focus,
+.themebtn:focus{
   border-color:var(--line);
   outline:none;
-  background:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);
 }
 
 .dropdown{
@@ -101,7 +121,7 @@ header{
 
 .menu a:hover,
 .menu a:focus{
-  background:#efe7da;
+  background:rgba(127,127,127,.12);
   outline:none;
 }
 
@@ -144,7 +164,7 @@ h1{
 
 .chip{
   border:1px solid var(--line);
-  background:rgba(255,255,255,.25);
+  background:rgba(255,255,255,.06);
   padding:8px 12px;
   border-radius:999px;
 }
@@ -161,12 +181,32 @@ h1{
   box-shadow:var(--shadow);
 }
 
+.hero-link{
+  display:block;
+}
+
 .gallery{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   grid-template-rows:1.2fr .8fr;
   gap:14px;
   min-height:520px;
+  position:relative;
+  overflow:hidden;
+}
+
+.gallery::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle 160px at var(--x,50%) var(--y,50%), var(--spot), transparent 55%);
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .18s ease;
+}
+
+.hero-link:hover .gallery::after{
+  opacity:1;
 }
 
 .panel{
@@ -174,18 +214,20 @@ h1{
   background:linear-gradient(180deg,#e9dfd0,#d9c9b2);
   position:relative;
   overflow:hidden;
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
 }
 
-.panel:nth-child(2){
-  background:linear-gradient(180deg,#ddd6cb,#c7bbab);
+.panel:nth-child(2){background:linear-gradient(180deg,#ddd6cb,#c7bbab)}
+.panel:nth-child(3){background:linear-gradient(180deg,#cfc0ad,#b8a38b)}
+.panel:nth-child(4){background:linear-gradient(180deg,#efe6d7,#dac8b2)}
+
+.hero-link:hover .panel{
+  filter:brightness(1.04);
+  transform:scale(1.01);
 }
 
-.panel:nth-child(3){
-  background:linear-gradient(180deg,#cfc0ad,#b8a38b);
-}
-
-.panel:nth-child(4){
-  background:linear-gradient(180deg,#efe6d7,#dac8b2);
+.hero-link:hover .panel:nth-child(1){
+  box-shadow:0 0 0 2px rgba(255,255,255,.18) inset;
 }
 
 .caption{
@@ -203,6 +245,10 @@ section{
   border-top:1px solid rgba(216,209,198,.7);
 }
 
+html[data-theme="dark"] section{
+  border-top:1px solid rgba(58,53,48,.9);
+}
+
 .grid{
   display:grid;
   grid-template-columns:repeat(12,1fr);
@@ -217,6 +263,10 @@ section{
   padding:18px;
   min-height:220px;
   box-shadow:0 8px 26px rgba(0,0,0,.04);
+}
+
+html[data-theme="dark"] .card{
+  background:rgba(26,24,27,.92);
 }
 
 .card h2,
@@ -251,23 +301,22 @@ section{
   border-radius:26px;
   overflow:hidden;
   box-shadow:var(--shadow);
+  display:block;
 }
 
 .work .img{
   aspect-ratio:4/3;
   background:linear-gradient(135deg,#dcc8ad,#aa8f68);
+  transition:transform .2s ease,filter .2s ease;
 }
 
-.work:nth-child(2) .img{
-  background:linear-gradient(135deg,#d9d2c8,#9d8d79);
-}
+.work:nth-child(2) .img{background:linear-gradient(135deg,#d9d2c8,#9d8d79)}
+.work:nth-child(3) .img{background:linear-gradient(135deg,#eadfcf,#bfa98d)}
+.work:nth-child(4) .img{background:linear-gradient(135deg,#d5c3ae,#7d6550)}
 
-.work:nth-child(3) .img{
-  background:linear-gradient(135deg,#eadfcf,#bfa98d);
-}
-
-.work:nth-child(4) .img{
-  background:linear-gradient(135deg,#d5c3ae,#7d6550);
+.work:hover .img{
+  transform:scale(1.03);
+  filter:brightness(1.08);
 }
 
 .work .txt{
@@ -305,14 +354,11 @@ footer{
 }
 
 @media (max-width:640px){
-  .bar{
-    padding:10px 14px;
-  }
-  .nav{
-    gap:6px;
-  }
+  .bar{padding:10px 14px}
+  .nav{gap:6px}
   .nav > a,
-  .dropbtn{
+  .dropbtn,
+  .themebtn{
     padding:8px 10px;
     font-size:.95rem;
   }
