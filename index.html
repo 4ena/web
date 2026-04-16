@@ -14,11 +14,11 @@
         <div class="dropdown" id="homeDrop">
           <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
           <div class="menu" role="menu" aria-label="Section menu">
-            <a role="menuitem" href="#about">About</a>
-            <a role="menuitem" href="#research">Research</a>
-            <a role="menuitem" href="#projects">Projects</a>
-            <a role="menuitem" href="#art">Art</a>
-            <a role="menuitem" href="#photography">Photography</a>
+            <a role="menuitem" data-target="about" href="#about">About</a>
+            <a role="menuitem" data-target="research" href="#research">Research</a>
+            <a role="menuitem" data-target="projects" href="#projects">Projects</a>
+            <a role="menuitem" data-target="art" href="#art">Art</a>
+            <a role="menuitem" data-target="photography" href="#photography">Photography</a>
           </div>
         </div>
       </nav>
@@ -50,49 +50,47 @@
       <p>foranns[at]mail[dot]uc[dot]edu</p>
     </section>
 
-    <section id="research" class="section-block">
-      <div class="folio"><a class="work" href="#research"><div class="label">Research</div><div class="img"></div></a></div>
-    </section>
-
-    <section id="projects" class="section-block">
-      <div class="folio"><a class="work" href="#projects"><div class="label">Projects</div><div class="img"></div></a></div>
-    </section>
-
-    <section id="art" class="section-block">
-      <div class="folio"><a class="work" href="#art"><div class="label">Art</div><div class="img"></div></a></div>
-    </section>
-
-    <section id="photography" class="section-block">
-      <div class="folio"><a class="work" href="#photography"><div class="label">Photography</div><div class="img"></div></a></div>
-    </section>
+    <section id="research" class="section-block"><div class="folio"><a class="work" href="#research"><div class="label">Research</div><div class="img"></div></a></div></section>
+    <section id="projects" class="section-block"><div class="folio"><a class="work" href="#projects"><div class="label">Projects</div><div class="img"></div></a></div></section>
+    <section id="art" class="section-block"><div class="folio"><a class="work" href="#art"><div class="label">Art</div><div class="img"></div></a></div></section>
+    <section id="photography" class="section-block"><div class="folio"><a class="work" href="#photography"><div class="label">Photography</div><div class="img"></div></a></div></section>
   </main>
 
   <script>
+    history.scrollRestoration = 'manual';
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => { window.scrollTo(0, 0); });
+
     const homeDrop = document.getElementById('homeDrop');
     function toggleHomeMenu() {
       const open = homeDrop.classList.toggle('open');
       homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
     }
+
+    function smoothScrollTo(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
     document.addEventListener('click', e => {
       if (!homeDrop.contains(e.target)) {
         homeDrop.classList.remove('open');
         homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
       }
     });
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+
+    document.querySelectorAll('.menu a').forEach(a => {
       a.addEventListener('click', e => {
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-          history.replaceState(null, '', '#'+id);
-          homeDrop.classList.remove('open');
-          homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-        }
+        e.preventDefault();
+        const id = a.dataset.target;
+        smoothScrollTo(id);
+        history.replaceState(null, '', location.pathname + location.search);
+        homeDrop.classList.remove('open');
+        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
       });
     });
-    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   </script>
 </body>
 </html>
