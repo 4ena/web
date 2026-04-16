@@ -27,9 +27,7 @@ button{
 }
 
 .topbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
+  position:relative;
   background:rgba(0,0,0,.92);
   border-bottom:1px solid rgba(43,39,36,.95);
   backdrop-filter:blur(12px);
@@ -69,17 +67,26 @@ button{
   color:var(--text);
   letter-spacing:.08em;
   text-transform:uppercase;
+  box-shadow:none;
 }
 
 .dropbtn:hover,
-.dropbtn:focus{
+.dropbtn:focus,
+.dropbtn:active{
   outline:none;
   opacity:.8;
+  background:transparent;
+  box-shadow:none;
+}
+
+.dropbtn::-moz-focus-inner{
+  border:0;
 }
 
 .menu{
   position:absolute;
-  right:0;
+  left:50%;
+  transform:translateX(-50%);
   top:calc(100% + 10px);
   min-width:200px;
   background:var(--card);
