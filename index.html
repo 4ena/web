@@ -3,32 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nick Foran</title>
+  <title>Nicholas Foran</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="bar">
-      <nav class="nav" aria-label="Primary">
-        <div class="dropdown" id="homeDrop">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Home ▾</button>
-          <div class="menu" role="menu" aria-label="Home sections">
-            <a role="menuitem" href="#about">About</a>
-            <a role="menuitem" href="#art">Art</a>
-            <a role="menuitem" href="#research">Research</a>
-            <a role="menuitem" href="#projects">Projects</a>
-            <a role="menuitem" href="#photography">Photography</a>
-          </div>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary">
+      <div class="dropdown" id="homeDrop">
+        <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Home ▾</button>
+        <div class="menu" role="menu" aria-label="Home sections">
+          <a role="menuitem" href="#about">About</a>
+          <a role="menuitem" href="#art">Art</a>
+          <a role="menuitem" href="#research">Research</a>
+          <a role="menuitem" href="#projects">Projects</a>
+          <a role="menuitem" href="#photography">Photography</a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
-
 
   <main id="home" class="shell">
     <section class="hero">
       <div>
-        <h1>Nick Foran</h1>
+        <h1>Nicholas Foran</h1>
         <p class="lede">University of Cincinnati · Electrical Engineering</p>
       </div>
       <a class="hero-link" href="#art" aria-label="Jump to featured work">
@@ -44,10 +41,8 @@
       </a>
     </section>
 
-    <section id="about" class="about">
-      <p>Biological haptics, sensors, pyroelectric matrrial.</p>
-      <p>-</p>
-      <p>foranns@mail.uc.edu</p>
+    <section id="about" class="about-section">
+      <p>Nicholas Foran. University of Cincinnati. Electrical Engineering. foranns[at]mail[dot]uc[dot]edu</p>
     </section>
 
     <section id="art" class="section-block">
@@ -99,6 +94,7 @@
         homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
       }
     });
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   </script>
 </body>
 </html>
