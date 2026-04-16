@@ -16,7 +16,7 @@ button{font:inherit;appearance:none;-webkit-appearance:none;border:0;background:
 .topbar{
   position:sticky;
   top:0;
-  z-index:5000;
+  z-index:99999;
   background:rgba(0,0,0,.92);
   border-bottom:1px solid rgba(43,39,36,.95);
   backdrop-filter:blur(12px);
@@ -31,7 +31,7 @@ button{font:inherit;appearance:none;-webkit-appearance:none;border:0;background:
   justify-content:space-between;
   gap:16px;
   position:relative;
-  z-index:5000;
+  z-index:99999;
 }
 
 .brand{
@@ -47,7 +47,7 @@ button{font:inherit;appearance:none;-webkit-appearance:none;border:0;background:
 
 .dropdown{
   position:relative;
-  z-index:6000;
+  z-index:100000;
 }
 
 .dropbtn{
@@ -76,16 +76,16 @@ button{font:inherit;appearance:none;-webkit-appearance:none;border:0;background:
 }
 
 .menu{
-  position:absolute;
-  right:0;
-  top:calc(100% + 10px);
+  position:fixed;
+  top:58px;
+  right:16px;
   min-width:220px;
   background:var(--card);
   border:1px solid var(--line);
   box-shadow:var(--shadow);
   padding:6px;
   display:none;
-  z-index:7000;
+  z-index:2147483647;
 }
 
 .menu a{
