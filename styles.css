@@ -27,23 +27,37 @@ button{
 }
 
 .topbar{
-  background:rgba(0,0,0,.88);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.92);
   border-bottom:1px solid rgba(43,39,36,.95);
+  backdrop-filter:blur(12px);
+}
+
+.bar{
+  max-width:980px;
+  margin:0 auto;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  font-size:.95rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
 }
 
 .nav{
   display:flex;
   align-items:center;
-  justify-content:center;
-  padding:10px 16px;
-  max-width:980px;
-  margin:0 auto;
 }
 
 .dropdown{
   position:relative;
-  display:flex;
-  justify-content:center;
 }
 
 .dropbtn{
@@ -55,29 +69,18 @@ button{
   color:var(--text);
   letter-spacing:.08em;
   text-transform:uppercase;
-  box-shadow:none;
-  outline:none;
 }
 
 .dropbtn:hover,
-.dropbtn:focus,
-.dropbtn:active{
-  background:transparent;
-  border:0;
-  box-shadow:none;
+.dropbtn:focus{
   outline:none;
   opacity:.8;
 }
 
-.dropbtn::-moz-focus-inner{
-  border:0;
-}
-
 .menu{
   position:absolute;
-  left:50%;
-  top:calc(100% + 8px);
-  transform:translateX(-50%);
+  right:0;
+  top:calc(100% + 10px);
   min-width:200px;
   background:var(--card);
   border:1px solid var(--line);
@@ -281,7 +284,7 @@ section{
 }
 
 @media (max-width:640px){
-  .nav{
+  .bar{
     padding:10px 12px;
   }
   .shell{
