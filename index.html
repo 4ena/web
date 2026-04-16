@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,20 +9,19 @@
 <body>
   <header>
     <div class="bar">
-      <a class="brand" href="#home">Your Name</a>
+      <a class="brand" href="#home">Nick Foran</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
+        <a href="#home">Home</a>
         <div class="dropdown" id="drop">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu()">Portfolio ▾</button>
-          <div class="menu" role="menu" aria-label="Portfolio sections">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu()">About ▾</button>
+          <div class="menu" role="menu" aria-label="About sections">
+            <a role="menuitem" href="#about">About</a>
             <a role="menuitem" href="#art">Art</a>
             <a role="menuitem" href="#research">Research</a>
             <a role="menuitem" href="#projects">Projects</a>
             <a role="menuitem" href="#photography">Photography</a>
           </div>
         </div>
-        <a href="#contact">Contact</a>
-        <button class="themebtn" type="button" onclick="toggleTheme()">Light/Dark</button>
       </nav>
     </div>
   </header>
@@ -31,59 +30,60 @@
     <section class="hero">
       <div>
         <h1>Nick Foran</h1>
-        <p class="lede">University of Cincinnati · Electrical Engineering. A quiet portfolio shaped like a small museum: minimal text, curated work, and a professional feel.</p>
-        <div class="meta">
-          <span class="chip">University of Cincinnati</span>
-          <span class="chip">Electrical Engineering</span>
-          <span class="chip">Selected Works</span>
-        </div>
+        <p class="lede">University of Cincinnati · Electrical Engineering</p>
       </div>
-      <div class="museum" aria-label="Featured work preview">
-        <a class="hero-link" href="#art">
+      <a class="hero-link" href="#art" aria-label="Jump to featured work">
+        <div class="museum" aria-label="Featured work preview">
           <div class="gallery">
             <div class="panel"></div>
             <div class="panel"></div>
             <div class="panel"></div>
             <div class="panel"></div>
           </div>
-        </a>
-        <div class="caption"><span>Featured portfolio view</span><span>Click the image to enter the portfolio</span></div>
-      </div>
+          <div class="caption"><span>Featured portfolio view</span><span>Click to browse work</span></div>
+        </div>
+      </a>
     </section>
 
-    <section id="about" class="grid">
-      <article class="card wide">
-        <h2>About</h2>
-        <p>Nick Foran. University of Cincinnati. Electrcial Engineering. Hobbies can live here as a small, polished note rather than a full biography.</p>
-      </article>
-      <article class="card">
-        <h3>Focus</h3>
-        <p>Clean, museum-like presentation with strong typography and generous spacing.</p>
-      </article>
-      <article class="card">
-        <h3>Style</h3>
-        <p>Minimal, editorial, and professional.</p>
-      </article>
-    </section>
-
-    <section id="art">
-      <div class="folio">
-        <a class="work" href="#art"><div class="img"></div><div class="txt"><h3>Art</h3><p>Short caption for an artwork or series.</p></div></a>
-        <a class="work" href="#research"><div class="img"></div><div class="txt"><h3>Research</h3><p>Short caption for research work or visual notes.</p></div></a>
-        <a class="work" href="#projects"><div class="img"></div><div class="txt"><h3>Projects</h3><p>Short caption for a design or academic project.</p></div></a>
-        <a class="work" href="#photography"><div class="img"></div><div class="txt"><h3>Photography</h3><p>Short caption for a photograph or series.</p></div></a>
-      </div>
-    </section>
-
-    <section id="contact" class="grid">
+    <section id="about" class="about grid">
       <article class="card full">
-        <h2>Contact</h2>
+        <h2>About</h2>
+        <p>Nick Foran. University of Cincinnati. Electrical Engineering.</p>
+      </article>
+      <article class="card full">
+        <h3>Contact</h3>
         <p class="email">foranns[at]mail[dot]uc[dot]edu</p>
       </article>
     </section>
-  </main>
 
-  <footer class="shell">© 2026 Nick Foran</footer>
+    <section id="art" class="section-block">
+      <h2>Art</h2>
+      <div class="folio">
+        <a class="work" href="#art"><div class="img"></div><div class="txt"><h3>Art</h3><p>Short caption for an artwork or series.</p></div></a>
+      </div>
+    </section>
+
+    <section id="research" class="section-block">
+      <h2>Research</h2>
+      <div class="folio">
+        <a class="work" href="#research"><div class="img"></div><div class="txt"><h3>Research</h3><p>Short caption for research work or visual notes.</p></div></a>
+      </div>
+    </section>
+
+    <section id="projects" class="section-block">
+      <h2>Projects</h2>
+      <div class="folio">
+        <a class="work" href="#projects"><div class="img"></div><div class="txt"><h3>Projects</h3><p>Short caption for a design or academic project.</p></div></a>
+      </div>
+    </section>
+
+    <section id="photography" class="section-block">
+      <h2>Photography</h2>
+      <div class="folio">
+        <a class="work" href="#photography"><div class="img"></div><div class="txt"><h3>Photography</h3><p>Short caption for a photograph or series.</p></div></a>
+      </div>
+    </section>
+  </main>
 
   <script>
     const drop = document.getElementById('drop');
@@ -97,10 +97,6 @@
         drop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
       }
     });
-    function toggleTheme(){
-      const root = document.documentElement;
-      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    }
   </script>
 </body>
 </html>
