@@ -27,11 +27,8 @@ button{font:inherit}
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:50;
+  position:static;
   background:rgba(0,0,0,.88);
-  backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(43,39,36,.95);
 }
 
