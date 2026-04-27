@@ -11,6 +11,14 @@
     <div class="bar">
       <a class="brand" href="#home">Nick Foran</a>
       <nav class="nav" aria-label="Primary">
+        <!-- Desktop nav -->
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#research-projects">Research Projects</a>
+          <a href="#art">Art</a>
+          <a href="#photography">Photography</a>
+        </div>
+        <!-- Mobile dropdown -->
         <div class="dropdown" id="homeDrop">
           <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
           <div class="menu" role="menu" aria-label="Section menu">
@@ -27,16 +35,15 @@
   <main id="home" class="shell">
     <section class="hero">
       <div>
-        <h1>Nick Foran</h1>
         <p class="lede">University of Cincinnati · Electrical Engineering 2028</p>
       </div>
       <a class="hero-link" href="#art" aria-label="Jump to featured work">
         <div class="museum" aria-label="Featured work preview">
           <div class="gallery">
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
+            <div class="panel" style="background-image:url('images/gallery1.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery2.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery3.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery4.jpg')"></div>
           </div>
           <div class="caption"><span>Featured portfolio view</span><span>Click to browse work</span></div>
         </div>
@@ -48,14 +55,23 @@
       <p>I am currently obtaining my B.S. at University of Cincinnati in Electrical Engineering.</p>
       <p>I am working on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
       <hr class="divider" />
-      <p><a href="mailto:foranns@mail.uc.edu">foranns@mail.uc.edu</a></p>
+      <div class="contact-row">
+        <a href="mailto:foranns@mail.uc.edu" class="icon-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>foranns@mail.uc.edu</span>
+        </a>
+        <a href="https://linkedin.com/in/nicholas-foran" class="icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </section>
 
     <section id="research-projects" class="section-block">
       <div class="folio">
         <a class="work" href="projects.html">
           <div class="label">Research Projects</div>
-          <div class="img"></div>
+          <div class="img" style="background-image:url('images/project1.jpg')"></div>
         </a>
       </div>
     </section>
@@ -64,7 +80,7 @@
       <div class="folio">
         <a class="work" href="art.html">
           <div class="label">Art</div>
-          <div class="img"></div>
+          <div class="img" style="background-image:url('images/art1.jpg')"></div>
         </a>
       </div>
     </section>
@@ -73,7 +89,7 @@
       <div class="folio">
         <a class="work" href="photography.html">
           <div class="label">Photography</div>
-          <div class="img"></div>
+          <div class="img" style="background-image:url('images/photo1.jpg')"></div>
         </a>
       </div>
     </section>
