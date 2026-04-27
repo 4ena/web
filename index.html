@@ -11,18 +11,18 @@
     <div class="bar">
       <a class="brand" href="#home">Nick Foran</a>
       <nav class="nav" aria-label="Primary">
-        <!-- Desktop nav -->
         <div class="nav-links">
           <a href="#about">About</a>
+          <a href="#news">News</a>
           <a href="#research-projects">Research Projects</a>
           <a href="#art">Art</a>
           <a href="#photography">Photography</a>
         </div>
-        <!-- Mobile dropdown -->
         <div class="dropdown" id="homeDrop">
           <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
           <div class="menu" role="menu" aria-label="Section menu">
             <a role="menuitem" data-target="about" href="#about">About</a>
+            <a role="menuitem" data-target="news" href="#news">News</a>
             <a role="menuitem" data-target="research-projects" href="#research-projects">Research Projects</a>
             <a role="menuitem" data-target="art" href="#art">Art</a>
             <a role="menuitem" data-target="photography" href="#photography">Photography</a>
@@ -54,16 +54,34 @@
       <p>My name is Nicholas Foran, but I go by Nick.</p>
       <p>I am currently obtaining my B.S. at University of Cincinnati in Electrical Engineering.</p>
       <p>I am working on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
-      <hr class="divider" />
+
       <div class="contact-row">
         <a href="mailto:foranns@mail.uc.edu" class="icon-link" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           <span>foranns@mail.uc.edu</span>
         </a>
-        <a href="https://linkedin.com/in/forannick" class="icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <a href="https://linkedin.com/in/nicholas-foran" class="icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           <span>LinkedIn</span>
         </a>
+      </div>
+    </section>
+
+    <section id="news" class="news-section">
+      <h2>News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">Apr 2026</span>
+          <span class="news-text">Started research assistant position in computational imaging lab.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Mar 2026</span>
+          <span class="news-text">Presented ASL real-time translator prototype at UC Engineering Expo.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jan 2026</span>
+          <span class="news-text">Began co-op rotation focusing on signal processing and optical systems.</span>
+        </div>
       </div>
     </section>
 
@@ -94,6 +112,10 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Nick Foran</p>
+  </footer>
 
   <script>
     history.scrollRestoration = 'manual';
