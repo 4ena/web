@@ -73,7 +73,6 @@ button {
   align-items: center;
 }
 
-/* Desktop nav links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -98,7 +97,6 @@ button {
   outline: none;
 }
 
-/* Mobile dropdown (hidden on desktop) */
 .dropdown {
   position: relative;
   z-index: 10000;
@@ -278,19 +276,12 @@ section {
 
 .about-section p:last-child { margin-bottom: 0; }
 
-.divider {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-  max-width: 68ch;
-}
-
 .contact-row {
   display: flex;
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
-  max-width: 68ch;
+  margin-top: 8px;
 }
 
 .icon-link {
@@ -316,6 +307,43 @@ section {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+}
+
+/* ── News ── */
+.news-section { padding-top: 10px; }
+
+.news-section h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-item {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-size: 0.95rem;
+  max-width: 68ch;
+}
+
+.news-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.news-text {
+  color: var(--text);
+  line-height: 1.5;
 }
 
 /* ── Folio cards ── */
@@ -377,6 +405,19 @@ section {
 }
 
 .section-block { padding-top: 22px; }
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
 
 /* ── Sub-page styles ── */
 .page-wrap {
@@ -446,6 +487,12 @@ section {
   .museum { min-height: auto; }
   .gallery { min-height: 240px; }
   .work { min-height: 300px; }
+
+  .news-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .news-date { min-width: auto; }
 }
 
 @media (max-width: 640px) {
