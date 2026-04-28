@@ -1,12 +1,157 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nick Foran - Electrical Engineer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nick Foran</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="bar">
+      <a class="brand" href="#home">Nick Foran</a>
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#research-projects">Research Projects</a>
+          <a href="#art">Art</a>
+          <a href="#photography">Photography</a>
+        </div>
+        <div class="dropdown" id="homeDrop">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
+          <div class="menu" role="menu" aria-label="Section menu">
+            <a role="menuitem" data-target="about" href="#about">About</a>
+            <a role="menuitem" data-target="news" href="#news">News</a>
+            <a role="menuitem" data-target="research-projects" href="#research-projects">Research Projects</a>
+            <a role="menuitem" data-target="art" href="#art">Art</a>
+            <a role="menuitem" data-target="photography" href="#photography">Photography</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="shell">
+    <section class="hero">
+      <div>
+        <p class="lede">University of Cincinnati · Electrical Engineering 2028</p>
+      </div>
+      <a class="hero-link" href="#art" aria-label="Jump to featured work">
+        <div class="museum" aria-label="Featured work preview">
+          <div class="gallery">
+            <div class="panel" style="background-image:url('images/gallery1.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery2.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery3.jpg')"></div>
+            <div class="panel" style="background-image:url('images/gallery4.jpg')"></div>
+          </div>
+          <div class="caption"><span>Featured portfolio view</span><span>Click to browse work</span></div>
+        </div>
+      </a>
+    </section>
+
+    <section id="about" class="about-section">
+      <p>My name is Nicholas Foran, but I go by Nick.</p>
+      <p>I am currently obtaining my B.S. at University of Cincinnati in Electrical Engineering.</p>
+      <p>I am working on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
+
+      <div class="contact-row">
+        <a href="mailto:foranns@mail.uc.edu" class="icon-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>foranns@mail.uc.edu</span>
+        </a>
+        <a href="https://linkedin.com/in/nicholas-foran" class="icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="news" class="news-section">
+      <h2>News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">Apr 2026</span>
+          <span class="news-text">Started research assistant position in computational imaging lab.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Mar 2026</span>
+          <span class="news-text">Presented ASL real-time translator prototype at UC Engineering Expo.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jan 2026</span>
+          <span class="news-text">Began co-op rotation focusing on signal processing and optical systems.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="research-projects" class="section-block">
+      <div class="folio">
+        <a class="work" href="projects.html">
+          <div class="label">Research Projects</div>
+          <div class="img" style="background-image:url('images/project1.jpg')"></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="art" class="section-block">
+      <div class="folio">
+        <a class="work" href="art.html">
+          <div class="label">Art</div>
+          <div class="img" style="background-image:url('images/art1.jpg')"></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="photography" class="section-block">
+      <div class="folio">
+        <a class="work" href="photography.html">
+          <div class="label">Photography</div>
+          <div class="img" style="background-image:url('images/photo1.jpg')"></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Nick Foran</p>
+  </footer>
+
+  <script>
+    history.scrollRestoration = 'manual';
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => { window.scrollTo(0, 0); });
+
+    const homeDrop = document.getElementById('homeDrop');
+    function toggleHomeMenu() {
+      const open = homeDrop.classList.toggle('open');
+      homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
+    }
+
+    function smoothScrollTo(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+    document.addEventListener('click', e => {
+      if (!homeDrop.contains(e.target)) {
+        homeDrop.classList.remove('open');
+        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.querySelectorAll('.menu a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.dataset.target;
+        smoothScrollTo(id);
+        history.replaceState(null, '', location.pathname + location.search);
+        homeDrop.classList.remove('open');
+        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
 </html>
