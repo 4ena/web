@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography | Nick Foran</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="bar">
+      <a class="brand" href="index.html">Nick Foran</a>
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#news">News</a>
+          <a href="index.html#research-projects">Research Projects</a>
+          <a href="index.html#art">Art</a>
+          <a href="index.html#photography">Photography</a>
+        </div>
+        <div class="dropdown" id="homeDrop">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
+          <div class="menu" role="menu" aria-label="Section menu">
+            <a role="menuitem" href="index.html#about">About</a>
+            <a role="menuitem" href="index.html#news">News</a>
+            <a role="menuitem" href="index.html#research-projects">Research Projects</a>
+            <a role="menuitem" href="index.html#art">Art</a>
+            <a role="menuitem" href="index.html#photography">Photography</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <a class="back-link" href="index.html">← Back Home</a>
+    <h1>Photography</h1>
+    <p>This section showcases my photography work.</p>
+    <p>Photos are imperfect; a frame can capture many moments but a chosen photo embodies many emotions further than explanation.</p>
+
+    <div class="gallery-grid">
+      <img src="images/photo1.jpg" alt="Photography 1" />
+      <img src="images/photo2.jpg" alt="Photography 2" />
+      <img src="images/photo3.jpg" alt="Photography 3" />
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Nick Foran</p>
+  </footer>
+
+  <script>
+    const homeDrop = document.getElementById('homeDrop');
+    function toggleHomeMenu() {
+      const open = homeDrop.classList.toggle('open');
+      homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
+    }
+    document.addEventListener('click', e => {
+      if (!homeDrop.contains(e.target)) {
+        homeDrop.classList.remove('open');
+        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
