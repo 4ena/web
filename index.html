@@ -13,10 +13,10 @@
 
   <header class="topbar">
     <div class="bar">
-      <a class="brand" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Nick Foran</a>
+      <a class="brand" href="index.html">Nicholas Foran</a>
       <nav class="nav">
         <div class="nav-links">
-          <a href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Home</a>
+          <a href="index.html">About</a>
           <a href="projects.html">Research</a>
           <a href="art.html">Art</a>
           <a href="photography.html">Photography</a>
@@ -24,7 +24,7 @@
         <div class="dropdown" id="homeDrop">
           <button class="dropbtn" onclick="toggleHomeMenu()">Menu ▾</button>
           <div class="menu">
-            <a href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Home</a>
+            <a href="index.html">About</a>
             <a href="projects.html">Research</a>
             <a href="art.html">Art</a>
             <a href="photography.html">Photography</a>
@@ -36,51 +36,53 @@
 
   <main class="shell">
 
-    <!-- About -->
-    <section class="about-section">
-      <p>My name is Nicholas Foran, but I go by Nick. I am currently a B.S. Electrical Engineering undergraduate at the University of Cincinnati, graduating in 2028.</p>
-      <p>I work on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
-      <p>I enjoy to read books, hike, and stay involved.</p>
-      <div class="contact-row">
-        <a href="mailto:foranns@mail.uc.edu" class="btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email</span>
-        </a>
-        <a href="https://linkedin.com/in/nicholas-foran" class="btn-secondary" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-    </section>
+    <!-- News (centered, minimal) -->
+    <div class="news-inline">
+      <p><strong>News:</strong> Started research assistant position in computational imaging lab. Completed ASL real-time translator prototype.</p>
+    </div>
 
-    <!-- News -->
-    <section class="news-section">
-      <h2 class="section-title">News</h2>
-      <div class="news-list">
-        <div class="news-item">
-          <span class="news-date">Apr 2026</span>
-          <span class="news-text">Started research assistant position in computational imaging lab.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Mar 2026</span>
-          <span class="news-text">Completed ASL real-time translator prototype using computer vision and signal processing.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Jan 2026</span>
-          <span class="news-text">Began co-op rotation focusing on signal processing and optical systems.</span>
+    <!-- Divider -->
+    <div class="hrule"></div>
+
+    <!-- About: Photo left, Text right -->
+    <section class="about-split">
+      <div class="about-photo">
+        <img src="images/image1.PNG" alt="Nick Foran" onerror="this.style.display='none'" />
+        <div class="photo-fallback">Photo</div>
+      </div>
+      <div class="about-text">
+        <p>My name is <strong>Nicholas Foran</strong>, but I go by <strong>Nick</strong>.</p>
+        <p>I am currently a <strong>B.S. Electrical Engineering</strong> undergraduate at the <strong>University of Cincinnati</strong>, graduating in <strong>2028</strong>.</p>
+        <p>I work on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
+        <p>I enjoy to read books, hike, and stay involved.</p>
+
+        <div class="contact-block">
+          <div class="emdash">—</div>
+          <a href="mailto:foranns@mail.uc.edu">foranns@mail.uc.edu</a>
+          <div class="social-row">
+            <a href="mailto:foranns@mail.uc.edu" aria-label="Email">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/nicholas-foran" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/4ena" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Research Projects -->
-    <section id="projects" class="projects-section">
+    <section class="projects-section">
       <h2 class="section-title">Research Projects</h2>
 
       <div class="project-list">
         <div class="project-row">
           <a class="project-thumb" href="projects.html">
             <img src="images/project1.jpg" alt="ASL Translator" onerror="this.style.display='none'" />
-            <div class="project-fallback">Project</div>
+            <div class="project-fallback"></div>
           </a>
           <div class="project-info">
             <h3>ASL Real-Time Translator</h3>
@@ -88,7 +90,7 @@
               <a href="projects.html">GitHub</a>
               <a href="projects.html">Paper</a>
             </div>
-            <div class="project-authors">N. Foran, et al.</div>
+            <div class="project-authors">N. Foran</div>
             <p>A prototype system for real-time American Sign Language translation using computer vision and signal processing techniques.</p>
           </div>
         </div>
@@ -96,7 +98,7 @@
         <div class="project-row">
           <a class="project-thumb" href="projects.html">
             <img src="images/project1.jpg" alt="Computational Imaging" onerror="this.style.display='none'" />
-            <div class="project-fallback">Project</div>
+            <div class="project-fallback"></div>
           </a>
           <div class="project-info">
             <h3>Computational Imaging Framework</h3>
@@ -104,7 +106,7 @@
               <a href="projects.html">GitHub</a>
               <a href="projects.html">Paper</a>
             </div>
-            <div class="project-authors">N. Foran, et al.</div>
+            <div class="project-authors">N. Foran</div>
             <p>Signal processing pipeline for optical system characterization and medical imaging reconstruction.</p>
           </div>
         </div>
@@ -112,7 +114,7 @@
     </section>
 
     <!-- Divider -->
-    <div class="section-divider"></div>
+    <div class="hrule"></div>
 
     <!-- Art & Photography Preview -->
     <section class="preview-section">
@@ -137,17 +139,6 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p>&copy; 2026 Nick Foran</p>
-      <div class="footer-links">
-        <a href="mailto:foranns@mail.uc.edu" aria-label="Email">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/nicholas-foran" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://github.com/4ena" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-      </div>
     </div>
   </footer>
 
