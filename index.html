@@ -13,85 +13,43 @@
 
   <header class="topbar">
     <div class="bar">
-      <a class="brand" href="#home">Nick Foran</a>
+      <a class="brand" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Nick Foran</a>
       <nav class="nav">
         <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#art">Art</a>
-          <a href="#photography">Photography</a>
+          <a href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Home</a>
+          <a href="projects.html">Research</a>
+          <a href="art.html">Art</a>
+          <a href="photography.html">Photography</a>
         </div>
         <div class="dropdown" id="homeDrop">
           <button class="dropbtn" onclick="toggleHomeMenu()">Menu ▾</button>
           <div class="menu">
-            <a data-target="home" href="#home">Home</a>
-            <a data-target="projects" href="#projects">Projects</a>
-            <a data-target="art" href="#art">Art</a>
-            <a data-target="photography" href="#photography">Photography</a>
+            <a href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">Home</a>
+            <a href="projects.html">Research</a>
+            <a href="art.html">Art</a>
+            <a href="photography.html">Photography</a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <main id="home" class="shell">
+  <main class="shell">
 
-    <!-- About + Portfolio Cards -->
-    <section class="hero-section">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <p>My name is Nicholas Foran, but I go by Nick. I am currently a B.S. Electrical Engineering undergraduate at the University of Cincinnati, graduating in 2028.</p>
-          <p>I work on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
-          <p>I enjoy to read books, hike, and stay involved.</p>
-          <div class="contact-row">
-            <a href="mailto:foranns@mail.uc.edu" class="btn-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>Email</span>
-            </a>
-            <a href="https://linkedin.com/in/nicholas-foran" class="btn-secondary" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <span>LinkedIn</span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-right">
-          <a class="port-card" href="projects.html">
-            <div class="port-thumb port-thumb-projects">
-              <img src="images/project1.jpg" alt="Research Projects" onerror="this.style.display='none'" />
-            </div>
-            <div class="port-info">
-              <div class="port-title-row">
-                <strong>Research Projects</strong>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-              <span class="port-meta">Computational Imaging, Signal Processing</span>
-            </div>
-          </a>
-          <a class="port-card" href="art.html">
-            <div class="port-thumb port-thumb-art">
-              <img src="images/image1.PNG" alt="Art" onerror="this.style.display='none'" />
-            </div>
-            <div class="port-info">
-              <div class="port-title-row">
-                <strong>Art</strong>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-              <span class="port-meta">Digital, Traditional</span>
-            </div>
-          </a>
-          <a class="port-card" href="photography.html">
-            <div class="port-thumb port-thumb-photo">
-              <img src="images/photo1.JPG" alt="Photography" onerror="this.style.display='none'" />
-            </div>
-            <div class="port-info">
-              <div class="port-title-row">
-                <strong>Photography</strong>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-              <span class="port-meta">Film, Digital</span>
-            </div>
-          </a>
-        </div>
+    <!-- About -->
+    <section class="about-section">
+      <p>My name is Nicholas Foran, but I go by Nick. I am currently a B.S. Electrical Engineering undergraduate at the University of Cincinnati, graduating in 2028.</p>
+      <p>I work on computational imaging that conveys complex imaging ability through domains like biological computing, medical imaging, and optical signals, advancing robustness throughout intelligent systems that face real-world challenges.</p>
+      <p>I enjoy to read books, hike, and stay involved.</p>
+      <div class="contact-row">
+        <a href="mailto:foranns@mail.uc.edu" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email</span>
+        </a>
+        <a href="https://linkedin.com/in/nicholas-foran" class="btn-secondary" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
       </div>
     </section>
 
@@ -114,39 +72,51 @@
       </div>
     </section>
 
-    <!-- Featured Research -->
-    <section id="projects" class="featured-section">
-      <h2 class="section-title">Featured Research</h2>
-      <div class="featured-card">
-        <div class="featured-grid">
-          <div class="featured-left">
-            <span class="featured-tag">Signal Processing</span>
+    <!-- Research Projects -->
+    <section id="projects" class="projects-section">
+      <h2 class="section-title">Research Projects</h2>
+
+      <div class="project-list">
+        <a class="project-row" href="projects.html">
+          <div class="project-thumb">
+            <img src="images/project1.jpg" alt="ASL Translator" onerror="this.style.display='none'" />
+            <div class="project-fallback">Project</div>
+          </div>
+          <div class="project-info">
             <h3>ASL Real-Time Translator</h3>
-            <p>A prototype system for real-time American Sign Language translation using computer vision and signal processing techniques.</p>
-            <a href="projects.html" class="featured-link">
-              <span>View Project</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
+            <p>A prototype system for real-time American Sign Language translation using computer vision and signal processing techniques. <span class="project-link">Read more &rarr;</span></p>
           </div>
-          <div class="featured-right">
-            <div class="featured-placeholder">
-              <span>Project imagery</span>
-            </div>
+        </a>
+
+        <a class="project-row" href="projects.html">
+          <div class="project-thumb">
+            <img src="images/project1.jpg" alt="Computational Imaging" onerror="this.style.display='none'" />
+            <div class="project-fallback">Project</div>
           </div>
-        </div>
+          <div class="project-info">
+            <h3>Computational Imaging Framework</h3>
+            <p>Signal processing pipeline for optical system characterization and medical imaging reconstruction. <span class="project-link">Read more &rarr;</span></p>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- Art -->
-    <section id="art" class="placeholder-section">
-      <h2 class="section-title">Art</h2>
-      <div class="placeholder-box">Art portfolio coming soon.</div>
-    </section>
-
-    <!-- Photography -->
-    <section id="photography" class="placeholder-section">
-      <h2 class="section-title">Photography</h2>
-      <div class="placeholder-box">Photography portfolio coming soon.</div>
+    <!-- Art & Photography Preview -->
+    <section class="preview-section">
+      <div class="preview-grid">
+        <a class="preview-card" href="art.html">
+          <div class="preview-img-wrap">
+            <img src="images/art.jpg" alt="Art" onerror="this.style.display='none'" />
+          </div>
+          <div class="preview-label">Art</div>
+        </a>
+        <a class="preview-card" href="photography.html">
+          <div class="preview-img-wrap">
+            <img src="images/photo1.JPG" alt="Photography" onerror="this.style.display='none'" />
+          </div>
+          <div class="preview-label">Photography</div>
+        </a>
+      </div>
     </section>
 
   </main>
@@ -169,47 +139,9 @@
   </footer>
 
   <script>
-    history.scrollRestoration = 'manual';
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('load', () => { window.scrollTo(0, 0); });
-
     const homeDrop = document.getElementById('homeDrop');
-    function toggleHomeMenu() {
-      const open = homeDrop.classList.toggle('open');
-      homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
-    }
-
-    function smoothScrollTo(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 64;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-
-    document.addEventListener('click', e => {
-      if (!homeDrop.contains(e.target)) {
-        homeDrop.classList.remove('open');
-        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.querySelectorAll('.menu a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const id = a.dataset.target;
-        smoothScrollTo(id);
-        homeDrop.classList.remove('open');
-        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        smoothScrollTo(id);
-      });
-    });
+    function toggleHomeMenu() { homeDrop.classList.toggle('open'); }
+    document.addEventListener('click', e => { if (!homeDrop.contains(e.target)) homeDrop.classList.remove('open'); });
   </script>
 
 </body>
