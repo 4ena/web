@@ -57,7 +57,6 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   color: var(--text);
 }
 
-/* ── Nav Links ── */
 .nav-links {
   display: flex;
   align-items: center;
@@ -75,7 +74,6 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
 
 .nav-links a:hover { color: var(--text); }
 
-/* ── Dropdown ── */
 .dropdown { position: relative; display: none; }
 
 .dropbtn {
@@ -128,7 +126,7 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
 
 /* ── News Inline ── */
 .news-inline {
-  padding: 40px 0 24px;
+  padding: 40px 0 28px;
   text-align: center;
 }
 
@@ -207,7 +205,6 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   font-weight: 600;
 }
 
-/* ── Contact Block ── */
 .contact-block {
   display: flex;
   flex-direction: column;
@@ -220,16 +217,6 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   color: var(--light);
   line-height: 1;
   margin-bottom: 4px;
-}
-
-.contact-block > a {
-  font-size: 0.88rem;
-  color: var(--text);
-  transition: opacity 0.2s ease;
-}
-
-.contact-block > a:hover {
-  opacity: 0.6;
 }
 
 .social-row {
@@ -254,9 +241,16 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   opacity: 0.75;
 }
 
-/* ── Research Projects ── */
+/* ── Selected Research ── */
 .projects-section {
   padding: 48px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
 }
 
 .section-title {
@@ -265,7 +259,16 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   color: var(--light);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 32px;
+}
+
+.section-link {
+  font-size: 0.82rem;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.section-link:hover {
+  color: var(--text);
 }
 
 .project-list {
@@ -287,7 +290,7 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   height: 120px;
   border-radius: 4px;
   overflow: hidden;
-  background: #f0f0f0;
+  background: #e0e0e0;
   flex-shrink: 0;
   position: relative;
   transition: opacity 0.2s ease;
@@ -307,7 +310,7 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
 .project-fallback {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #e8e8e8 0%, #f0f0f0 100%);
+  background: linear-gradient(135deg, #e0e0e0 0%, #eaeaea 100%);
 }
 
 .project-info {
@@ -359,11 +362,10 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   padding: 32px 0 64px;
 }
 
-.preview-grid {
+.preview-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  max-width: 520px;
 }
 
 .preview-card {
@@ -371,59 +373,116 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  transition: opacity 0.2s ease;
+  background: #e0e0e0;
+  height: 220px;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
 }
 
 .preview-card:hover {
-  opacity: 0.85;
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  z-index: 2;
 }
 
-.preview-img-wrap {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: #f0f0f0;
-}
-
-.preview-img-wrap img {
+.preview-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.preview-label {
+.preview-fallback {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(4px);
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text);
-  border-radius: 3px;
-  letter-spacing: 0.02em;
+  inset: 0;
+  background: linear-gradient(135deg, #e0e0e0 0%, #eaeaea 100%);
 }
 
 /* ── Footer ── */
 .site-footer {
-  border-top: 1px solid var(--line);
+  padding: 24px 0;
 }
 
 .footer-inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.footer-inner p {
+.footer-inner .copy {
   font-size: 0.78rem;
   color: #bbb;
   letter-spacing: 0.05em;
+}
+
+.footer-inner .email {
+  font-size: 0.82rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer-inner .email:hover {
+  color: var(--text);
+}
+
+/* ── Gallery Grid (Art / Photography pages) ── */
+.gallery-section {
+  padding: 48px 0 64px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #e0e0e0;
+  aspect-ratio: 1;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e0e0e0 0%, #eaeaea 100%);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
 }
 
 /* ── Responsive ── */
@@ -452,8 +511,8 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
     height: 90px;
   }
 
-  .preview-grid {
-    max-width: none;
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -470,7 +529,17 @@ button { font: inherit; border: none; background: none; cursor: pointer; }
     height: 180px;
   }
 
-  .preview-grid {
+  .preview-row {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
 }
