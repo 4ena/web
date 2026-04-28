@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Projects | Nick Foran</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research — Nick Foran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header class="topbar">
     <div class="bar">
-      <a class="brand" href="index.html">Nick Foran</a>
-      <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">Nicholas Foran</a>
+      <nav class="nav">
         <div class="nav-links">
-          <a href="index.html#about">About</a>
-          <a href="index.html#news">News</a>
-          <a href="index.html#research-projects">Research Projects</a>
-          <a href="index.html#art">Art</a>
-          <a href="index.html#photography">Photography</a>
+          <a href="index.html">About</a>
+          <a href="projects.html">Research</a>
+          <a href="art.html">Art</a>
+          <a href="photography.html">Photography</a>
         </div>
         <div class="dropdown" id="homeDrop">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleHomeMenu()">Menu ▾</button>
-          <div class="menu" role="menu" aria-label="Section menu">
-            <a role="menuitem" href="index.html#about">About</a>
-            <a role="menuitem" href="index.html#news">News</a>
-            <a role="menuitem" href="index.html#research-projects">Research Projects</a>
-            <a role="menuitem" href="index.html#art">Art</a>
-            <a role="menuitem" href="index.html#photography">Photography</a>
+          <button class="dropbtn" onclick="toggleHomeMenu()">Menu ▾</button>
+          <div class="menu">
+            <a href="index.html">About</a>
+            <a href="projects.html">Research</a>
+            <a href="art.html">Art</a>
+            <a href="photography.html">Photography</a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <main class="page-wrap">
-    <a class="back-link" href="index.html">← Back Home</a>
-    <h1>Research Projects</h1>
-    <p>This section features my engineering and technical work.</p>
-    <p>Examples: ASL real-time translator, chest X-ray screening, solar tracker, and internship design work.</p>
+  <main class="shell">
 
-    <div class="gallery-grid">
-      <img src="images/project1.jpg" alt="Research project preview 1" />
-      <img src="images/project2.jpg" alt="Research project preview 2" />
-      <img src="images/project3.jpg" alt="Research project preview 3" />
-    </div>
+    <section class="projects-section">
+      <div class="section-header">
+        <h2 class="section-title">Research</h2>
+      </div>
+
+      <div class="project-list">
+        <div class="project-row">
+          <a class="project-thumb" href="#"><img src="images/project1.jpg" alt="ASL Translator" onerror="this.style.display='none'" /><div class="project-fallback"></div></a>
+          <div class="project-info">
+            <h3>ASL Real-Time Translator</h3>
+            <div class="project-links"><a href="#">GitHub</a><a href="#">Paper</a></div>
+            <div class="project-authors">N. Foran</div>
+            <p>A prototype system for real-time American Sign Language translation using computer vision and signal processing techniques.</p>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <a class="project-thumb" href="#"><img src="images/project1.jpg" alt="Computational Imaging" onerror="this.style.display='none'" /><div class="project-fallback"></div></a>
+          <div class="project-info">
+            <h3>Computational Imaging Framework</h3>
+            <div class="project-links"><a href="#">GitHub</a><a href="#">Paper</a></div>
+            <div class="project-authors">N. Foran</div>
+            <p>Signal processing pipeline for optical system characterization and medical imaging reconstruction.</p>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <a class="project-thumb" href="#"><img src="images/project1.jpg" alt="Optical Signal Processing" onerror="this.style.display='none'" /><div class="project-fallback"></div></a>
+          <div class="project-info">
+            <h3>Optical Signal Processing Platform</h3>
+            <div class="project-links"><a href="#">GitHub</a><a href="#">Demo</a></div>
+            <div class="project-authors">N. Foran</div>
+            <p>Real-time DSP architecture for coherent optical communication systems with adaptive equalization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Nick Foran</p>
+    <div class="footer-inner">
+      <p class="copy">&copy; 2026 Nick Foran</p>
+      <a class="email" href="mailto:foranns@mail.uc.edu">foranns@mail.uc.edu</a>
+    </div>
   </footer>
 
   <script>
     const homeDrop = document.getElementById('homeDrop');
-    function toggleHomeMenu() {
-      const open = homeDrop.classList.toggle('open');
-      homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', open);
-    }
-    document.addEventListener('click', e => {
-      if (!homeDrop.contains(e.target)) {
-        homeDrop.classList.remove('open');
-        homeDrop.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-      }
-    });
+    function toggleHomeMenu() { homeDrop.classList.toggle('open'); }
+    document.addEventListener('click', e => { if (!homeDrop.contains(e.target)) homeDrop.classList.remove('open'); });
   </script>
+
 </body>
 </html>
