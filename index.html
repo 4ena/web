@@ -13,26 +13,26 @@
 
   <header class="site-header">
     <div class="header-bar">
-      <a href="#" class="logo">Nick Foran</a>
+      <a href="index.html" class="logo">Nick Foran</a>
       <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#art">Art</a>
-        <a href="#photography">Photography</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="art.html">Art</a>
+        <a href="photography.html">Photography</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">Menu</button>
       <div class="mobile-nav">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#art">Art</a>
-        <a href="#photography">Photography</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="art.html">Art</a>
+        <a href="photography.html">Photography</a>
       </div>
     </div>
   </header>
 
   <div class="page-content">
 
-    <section id="home" class="home-section">
+    <section class="home-section">
       <div class="home-grid">
         <div class="about-col">
           <p>
@@ -58,42 +58,33 @@
       </div>
     </section>
 
-    <section id="research" class="research">
-      <h2>Research</h2>
-      <table>
-        <tr>
-          <td class="r-thumb">
-            <img src="images/project1.jpg" alt="ASL project thumbnail" loading="lazy" />
-          </td>
-          <td class="r-info">
-            <p class="r-title">ASL Real-Time Translator</p>
-            <p class="r-meta"><strong>N. Foran</strong> · University of Cincinnati, 2026</p>
-            <p class="r-desc">Prototype for real-time American Sign Language translation using computer vision and signal processing.</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="r-thumb">
-            <img src="images/project1.jpg" alt="Computational imaging project thumbnail" loading="lazy" />
-          </td>
-          <td class="r-info">
-            <p class="r-title">Computational Imaging Framework</p>
-            <p class="r-meta"><strong>N. Foran</strong> · University of Cincinnati, 2026</p>
-            <p class="r-desc">Signal processing pipeline for optical system characterization and medical imaging reconstruction.</p>
-          </td>
-        </tr>
-      </table>
+    <section class="media">
+      <div class="section-heading">
+        <h2>Research</h2>
+        <a href="research.html" class="see-all">See all research →</a>
+      </div>
+      <div class="preview-row">
+        <img src="images/project1.jpg" alt="Research preview" loading="lazy" />
+        <img src="images/project1.jpg" alt="Research preview" loading="lazy" />
+      </div>
     </section>
 
-    <section id="art" class="media">
-      <h2>Art</h2>
+    <section class="media">
+      <div class="section-heading">
+        <h2>Art</h2>
+        <a href="art.html" class="see-all">See all art →</a>
+      </div>
       <div class="preview-row">
         <img src="images/art.jpg" alt="Art sample" loading="lazy" />
         <img src="images/image1.PNG" alt="Art sample" loading="lazy" />
       </div>
     </section>
 
-    <section id="photography" class="media">
-      <h2>Photography</h2>
+    <section class="media">
+      <div class="section-heading">
+        <h2>Photography</h2>
+        <a href="photography.html" class="see-all">See all photos →</a>
+      </div>
       <div class="preview-row">
         <img src="images/ph.jpg" alt="Photography sample" loading="lazy" />
         <img src="images/photo1.JPG" alt="Photography sample" loading="lazy" />
