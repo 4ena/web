@@ -167,20 +167,20 @@ a:hover { text-decoration: underline; }
   margin-bottom: 0;
 }
 
-/* ─── Contact line with thin icons ─── */
+/* ─── Contact line with minimal icons ─── */
 .contact-line {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .contact-line a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.88rem;
+  gap: 4px;
+  font-size: 0.85rem;
   color: var(--text);
   text-decoration: none;
 }
@@ -190,26 +190,20 @@ a:hover { text-decoration: underline; }
 }
 
 .icon {
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   flex-shrink: 0;
-  opacity: 0.65;
-  transition: opacity 0.2s ease;
+  opacity: 0.5;
 }
 
 .contact-line a:hover .icon {
-  opacity: 1;
+  opacity: 0.8;
 }
 
-.icon.linkedin {
-  fill: currentColor;
-  stroke: none;
-}
-
-.emdash {
+.dot {
   color: var(--light);
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 0.9rem;
+  user-select: none;
 }
 
 .news-col h2 {
